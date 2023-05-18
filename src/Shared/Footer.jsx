@@ -16,14 +16,7 @@ const Footer = () => {
             Providing Kids Toys since 2020
           </p>
         </div>
-        <div>
-          <span className="footer-title">Services</span>
-          <Link to="/allToys">All Toys</Link>
-          <Link to="/myToys">My Toys</Link>
-          <Link to="/addAToy">Add a toy</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
-        </div>
+        
         <div>
           <span className="footer-title">Company Location</span>
           <p>Powerhouse para</p>
@@ -32,6 +25,14 @@ const Footer = () => {
           <a href="mailto: samiul641@gmail.com" className="custom-color">
             samiul641@gmail.com
           </a>
+        </div>
+        <div>
+          <span className="footer-title">Services</span>
+          <Link to="/allToys">All Toys</Link>
+          <Link to="/myToys">My Toys</Link>
+          <Link to="/addAToy">Add a toy</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
         </div>
         <div>
           <span className="footer-title">Social</span>

@@ -17,9 +17,9 @@
 .custom-color{
   color: #FEBF00;
 }
-.menu-horizontal li:focus,
-.menu-horizontal li:active,
-.menu-horizontal li:hover,
-.menu-horizontal li::selection{
-  background:transparent !important;
+.navbar ul li {
+  font-weight: 600;
+}
+h1, h2, h3 {
+  color:#50D0E5
 }

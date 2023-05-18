@@ -51,24 +51,24 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      if (currentUser && currentUser.email) {
-        const loguser = {
-            email: currentUser.email
-          }
-        fetch("https://cars-repairing-workshop-server.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(loguser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            localStorage.setItem("car-access-token", data.token);
-          });
-      }else{
-        localStorage.removeItem('car-access-token')
-      }
+      // if (currentUser && currentUser.email) {
+      //   const loguser = {
+      //       email: currentUser.email
+      //     }
+      //   fetch("https://cars-repairing-workshop-server.vercel.app/jwt", {
+      //     method: "POST",
+      //     headers: {
+      //       "content-type": "application/json",
+      //     },
+      //     body: JSON.stringify(loguser),
+      //   })
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       localStorage.setItem("car-access-token", data.token);
+      //     });
+      // }else{
+      //   localStorage.removeItem('car-access-token')
+      // }
     });
     return () => {
       unsubscribe();

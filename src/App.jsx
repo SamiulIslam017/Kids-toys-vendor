@@ -7,7 +7,7 @@ import Footer from './Shared/Footer'
 function App() {
 
   return (
-    <div className='min-h-screen flex flex-col justify-between'>
+    <div className='min-h-screen flex flex-col justify-between bg-[#d2f9ff40]'>
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

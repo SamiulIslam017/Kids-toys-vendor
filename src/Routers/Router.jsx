@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login"
 import Register from "../Pages/Login/Register"
 
 import Error from "../Pages/Error";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -28,12 +29,12 @@ const router = createBrowserRouter([
     },
     {
       path:'/myToys',
-      element:<MyToys></MyToys>
+      element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
     
     },
     {
       path:'/addAToy',
-      element:<AddNewToy></AddNewToy>
+      element:<PrivateRoute><AddNewToy></AddNewToy></PrivateRoute>
     },
     {
       path:'/blogs',
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/toyDetails",
-      element:<SingleToyDetails></SingleToyDetails>
+      element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>
     },
     {
       path:"/login",
