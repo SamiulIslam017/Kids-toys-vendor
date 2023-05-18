@@ -11,4 +11,15 @@
 }
 .active{
   color: #FEBF00;
+  background:transparent;
+  font-weight: bold;
+}
+.custom-color{
+  color: #FEBF00;
+}
+.menu-horizontal li:focus,
+.menu-horizontal li:active,
+.menu-horizontal li:hover,
+.menu-horizontal li::selection{
+  background:transparent !important;
 }
