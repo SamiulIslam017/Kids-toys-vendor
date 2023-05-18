@@ -7,11 +7,11 @@ import Footer from './Shared/Footer'
 function App() {
 
   return (
-    <>
+    <div className='min-h-screen flex flex-col justify-between'>
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
-    </>
+    </div>
   )
 }
 
