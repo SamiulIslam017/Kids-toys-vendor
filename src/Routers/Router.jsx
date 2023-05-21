@@ -11,6 +11,7 @@ import Register from "../Pages/Login/Register"
 
 import Error from "../Pages/Error";
 import PrivateRoute from "./PrivateRoute";
+import UpdateRoute from "../Extra/UpdateRoute";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
     {
       path:'/addAToy',
       element:<PrivateRoute><AddNewToy></AddNewToy></PrivateRoute>
+
     },
     {
       path:'/blogs',
@@ -51,6 +53,11 @@ const router = createBrowserRouter([
     {
       path:'/register',
       element:<Register></Register>
+    },
+    {
+      path:'/update/:id',
+      element:<UpdateRoute></UpdateRoute>,
+      loader:({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
     }
     
 ],

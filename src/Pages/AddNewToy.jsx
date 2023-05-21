@@ -53,6 +53,7 @@ const AddNewToy = () => {
     const rat = rating;
     const cat = value;
     const subCat = subCategory;
+    const desc = form.desc.value;
     
     const toys = {
         toyName: toyName,
@@ -60,10 +61,11 @@ const AddNewToy = () => {
         toyUrl: photo,
         price,
         qty:quantity,
-        sellerEmail: email,
+        email: email,
         rating:rat,
         category:cat,
-        subCategory: subCat
+        subCategory: subCat,
+        description: desc
     }
     fetch('http://localhost:5000/alltoys',{
         method:"POST",
@@ -74,7 +76,6 @@ const AddNewToy = () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         if (data.insertedId) {
             Swal.fire({
                 position: 'top-end',
@@ -263,6 +264,7 @@ const handleRatings = e => {
             </label>
             <textarea
               placeholder="Bio"
+              name="desc"
               className="textarea textarea-bordered textarea-lg w-full "
             ></textarea>
           </div>

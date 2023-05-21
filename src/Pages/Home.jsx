@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import GallerySection from "../Shared/GallerySection";
 import Seller from "../Shared/Seller";
 import Countdown from "react-countdown";
+import ShopSection from "../Shared/Category/ShopSection";
 
 const Home = () => {
   return (
@@ -49,6 +50,18 @@ const Home = () => {
       </div>
 
       {/* category section */}
+
+      <div className="max-w-7xl mx-auto">
+      <div className="text-center mb-10 w-10/12 md:w-6/12 lg:w-6/12 mx-auto">
+          <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold">Products showcase</h1>
+          <p className="py-6">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
+          </p>
+        </div>
+        <ShopSection></ShopSection>
+      </div>
 
       {/* Sponsors section */}
       <div className="max-w-7xl mx-auto">
