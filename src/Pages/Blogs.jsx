@@ -28,6 +28,27 @@ const Blogs = () => {
           credential when it calls the target API.
         </p>
       </div>
+      <div className="  mb-20">
+        <h1 className="text-3xl font-bold">Compare SQL and NoSQL databases?</h1>
+        <p className="mt-6 text-base font-medium">
+          First off, MySQL is a relational database that is based on a tabular
+          design. NoSQL is non-relational and has a document-based design. A
+          MySQL database is currently more popular in the market than NoSQL
+          because the latter is still fairly new.
+        </p>
+        <p className="mt-6 text-base font-medium">
+          At a high level, NoSQL and SQL databases have many similarities. In
+          addition to supporting data storage and queries, they both also allow
+          one to retrieve, update, and delete stored data.
+        </p>
+
+        <p className="mt-6 text-base font-medium">
+          SQL is a query language, while SQL Server is a database management
+          system. SQL is a query language for working with a relational
+          database, while SQL Server is proprietary software that performs SQL
+          queries.
+        </p>
+      </div>
       
     </div>
   );
