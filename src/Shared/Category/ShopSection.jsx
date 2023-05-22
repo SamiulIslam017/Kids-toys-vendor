@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import CardTwo from "./cardTwo";
-
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 
 
@@ -19,6 +20,7 @@ const ShopSection = () => {
         .then(data => {
             // console.log(data);
             setCat(data)
+            Aos.init();
         })
     },[])
     console.log(cat);
@@ -110,7 +112,7 @@ const ShopSection = () => {
                 
             </div>
             
-            <div className="w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" data-aos="zoom-in">
                 {
                     active === true ? cat1?.map(prod => <Card key={prod._id} prod={prod}></Card>) : cat?.slice(0,6).map(prod => <CardTwo key={prod._id} prod={prod}></CardTwo>)
                 }

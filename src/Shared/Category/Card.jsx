@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-stars";
+import Aos from "aos";
+import "aos/dist/aos.css"
+import { useEffect } from "react";
 
 const Card = ({ prod }) => {
   const { toyUrl, toyName, price, rating, _id } = prod;
+  useEffect(()=>{
+    Aos.init();
+  },[])
   return (
-    <div>
+    <div data-aos="zoom-in">
       <div className="card  shadow-xl">
         <figure>
           <img className="h-52 w-full object-cover" src={toyUrl} />
