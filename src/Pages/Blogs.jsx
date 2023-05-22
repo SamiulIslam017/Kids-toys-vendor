@@ -66,7 +66,24 @@ const Blogs = () => {
           efficient, scalable, and enterprise-grade applications.
         </p>
       </div>
-      
+      <div className="  mb-20">
+        <h1 className="text-3xl font-bold">
+          What is MongoDB aggregate and how does it work?
+        </h1>
+        <p className="mt-6 text-base font-medium">
+          An aggregation pipeline consists of one or more stages that process
+          documents: Each stage performs an operation on the input documents.
+          For example, a stage can filter documents, group documents, and
+          calculate values. The documents that are output from a stage are
+          passed to the next stage.
+        </p>
+        <p className="mt-6 text-base font-medium">
+          A cursor for the documents produced by the final stage of the
+          aggregation pipeline. If the pipeline includes the explain option, the
+          query returns a document that provides details on the processing of
+          the aggregation operation.
+        </p>
+      </div>
     </div>
   );
 };
