@@ -31,7 +31,7 @@ const MyToys = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           
-          fetch(`https://kids-toy-vendor-server-samiulislam017.vercel.app/alltoys/${id}`, {
+          fetch(`https://kids-toy-vendor-server.vercel.app/alltoys/${id}`, {
             method:'DELETE'
         })
         .then(res => res.json())

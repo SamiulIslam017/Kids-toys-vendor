@@ -8,6 +8,10 @@
   
   
 }
+.bg-custom{
+  background-color: #FFCE3B;
+  color:#000;
+}
 .primary-bg-color:hover{
   color: #fff;
 }

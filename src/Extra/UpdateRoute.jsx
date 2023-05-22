@@ -15,7 +15,7 @@ const UpdateRoute = () => {
 
     const updatedToys = { price, qty, description };
 
-    fetch(`https://kids-toy-vendor-server-samiulislam017.vercel.app/alltoys/${_id}`, {
+    fetch(`https://kids-toy-vendor-server.vercel.app/alltoys/${_id}`, {
         method:'PATCH',
         headers:{
             'content-type': 'application/json'

@@ -80,40 +80,11 @@ const ShopSection = () => {
         setActive(true)
     }
     console.log(cat1);
-    // const options = [
-    //     {
-    //         'category': "5 to 7 Years",
-    //         'onesubCategory': [
-    //             "Geometric Shape Toy",
-    //             "Plastic Robert",
-    //             "Shape Puzzles",
-    //         ]
-    //     },
-    //     {
-    //         'category': "8 to 13 Years",
-    //         'twosubCategory': [
-    //             "Toy Blocks",
-    //             "Toy House",
-    //             "Wood Block Tower",
-    //         ]
-    //     },
-    //     {
-    //         'category': "14 Years or Above",
-    //         'threesubCategory': [
-    //             "Air craft",
-    //             "Civil Engineering",
-    //             "Lego Toys",
-    //         ]
-    //     },
-        
-        
-       
-    //   ];
     return (
         <div className="flex flex-col md:flex-row lg:flex-row gap-5">
             <div className="w-4/12">
                 <div className="p-2 border border-slate-200">
-                    <h2 className="py-4 px-2 text-2xl font-bold">5 to 7 Years</h2>
+                    <h2 className="py-4 px-2 bg-custom text-2xl font-bold rounded-md">5 to 7 Years</h2>
                     <ul className="ml-6 flex flex-col gap-2">
                         <li className="cursor-pointer" onClick={handleCat1}>Geometric Shape Toy</li>
                         <li className="cursor-pointer" onClick={handleCat2}>Plastic Robert</li>
@@ -121,7 +92,7 @@ const ShopSection = () => {
                     </ul>
                 </div>
                 <div className="p-2 border border-slate-200">
-                    <h2 className="py-4 px-2 text-2xl font-bold">8 to 13 Years</h2>
+                    <h2 className="py-4 px-2 bg-custom text-2xl font-bold">8 to 13 Years</h2>
                     <ul className="ml-6 flex flex-col gap-2">
                         <li className="cursor-pointer" onClick={handleCat4}>Toy Blocks</li>
                         <li className="cursor-pointer" onClick={handleCat5}>Toy House</li>
@@ -129,7 +100,7 @@ const ShopSection = () => {
                     </ul>
                 </div>
                 <div className="p-2 border border-slate-200">
-                    <h2 className="py-4 px-2 text-2xl font-bold">14 Years or Above</h2>
+                    <h2 className="py-4 px-2 bg-custom text-2xl font-bold">14 Years or Above</h2>
                     <ul className="ml-6 flex flex-col gap-2">
                         <li className="cursor-pointer" onClick={handleCat7}>Air craft</li>
                         <li className="cursor-pointer" onClick={handleCat8}>Civil Engineering</li>

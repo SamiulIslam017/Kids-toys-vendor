@@ -26,7 +26,8 @@ const router = createBrowserRouter([
     },
     {
       path:'/allToys',
-      element: <AllToys></AllToys>
+      element: <AllToys></AllToys>,
+      loader: () => fetch('https://kids-toy-vendor-server.vercel.app/totalToys')
     },
     {
       path:'/myToys',
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
     {
       path:"/toyDetails/:id",
       element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
-      loader:({params}) => fetch(`https://kids-toy-vendor-server-samiulislam017.vercel.app/alltoys/${params.id}`)
+      loader:({params}) => fetch(`https://kids-toy-vendor-server.vercel.app/alltoys/${params.id}`)
     },
     {
       path:"/login",
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
     {
       path:'/update/:id',
       element:<UpdateRoute></UpdateRoute>,
-      loader:({params}) => fetch(`https://kids-toy-vendor-server-samiulislam017.vercel.app/alltoys/${params.id}`)
+      loader:({params}) => fetch(`https://kids-toy-vendor-server.vercel.app/alltoys/${params.id}`)
     },
     
 ],
