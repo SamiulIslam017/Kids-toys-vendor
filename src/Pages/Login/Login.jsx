@@ -22,7 +22,11 @@ const Login = () => {
         login(email,password)
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser);
+            
+            const logUser = {
+              email: loggedUser.email
+            }
+            console.log(logUser);
             setError('');
             Swal.fire({
                 position: 'top-end',
@@ -32,7 +36,7 @@ const Login = () => {
                 timer: 1500
             })
             form.reset();
-            navigate(from, {replace: true});
+            // navigate(from, {replace: true});
         })
         .catch(error => {
             setError('Password or email did not matched')

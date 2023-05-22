@@ -51,6 +51,24 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      if (currentUser && currentUser.email) {
+        const loguser = {
+            email: currentUser.email
+          }
+        fetch("https://kids-toy-vendor-server.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(loguser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("toy-access-token", data.token);
+          });
+      }else{
+        localStorage.removeItem('toy-access-token')
+      }
     });
     return () => {
       unsubscribe();

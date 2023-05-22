@@ -3,21 +3,33 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Option from "../Extra/Option";
 import Swal from "sweetalert2";
 import useTitle from "../hooks/useTitle";
+import { useNavigate } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [mytoys, setMyToys] = useState([]);
+  const navigate= useNavigate();
   useTitle('My Toys')
-  const url = `https://kids-toy-vendor-server.vercel.app/alltoys?email=${user.email}`;
+  const url = `https://kids-toy-vendor-server.vercel.app/alltoys?email=${user?.email}`;
 
   useEffect(() => {
-    fetch(url)
+    fetch(url,{
+      method:"GET",
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('toy-access-token')}`
+      }
+    })
       .then((res) => res.json())
       .then((data) => {
+        if(!data.error){
+          setMyToys(data);
+        }else{
+          
+          navigate('/');
+        }
         
-        setMyToys(data);
       });
-  }, [url]);
+  }, [url,navigate]);
 
 
 //   delete function
