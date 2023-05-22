@@ -84,7 +84,7 @@ const ShopSection = () => {
     console.log(cat1);
     return (
         <div className="flex flex-col md:flex-row lg:flex-row gap-5">
-            <div className="w-4/12">
+            <div className="w-full md:w-4/12 lg:w-4/12 flex flex-col">
                 <div className="p-2 border border-slate-200">
                     <h2 className="py-4 px-2 bg-custom text-2xl font-bold rounded-md">5 to 7 Years</h2>
                     <ul className="ml-6 flex flex-col gap-2">
@@ -112,7 +112,7 @@ const ShopSection = () => {
                 
             </div>
             
-            <div className="w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" data-aos="zoom-in">
+            <div className="w-full md:w-8/12 lg:w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" data-aos="zoom-in">
                 {
                     active === true ? cat1?.map(prod => <Card key={prod._id} prod={prod}></Card>) : cat?.slice(0,6).map(prod => <CardTwo key={prod._id} prod={prod}></CardTwo>)
                 }

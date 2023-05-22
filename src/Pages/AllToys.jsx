@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import AllToysTable from "../Extra/AllToysTable";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [toyPerPage,setToyPerPage] = useState(5);
   const { totalToys } = useLoaderData();
+  useTitle('All Toys');
   const totalPages = Math.ceil(totalToys / toyPerPage);
 
   const pageNumbers = [...Array(totalPages).keys()];
