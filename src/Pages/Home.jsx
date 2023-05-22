@@ -6,8 +6,10 @@ import ShopSection from "../Shared/Category/ShopSection";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import useTitle from "../hooks/useTitle";
 
 const Home = () => {
+  useTitle('Kids Toy Vendor')
   useEffect(() => {
     Aos.init();
   }, []);

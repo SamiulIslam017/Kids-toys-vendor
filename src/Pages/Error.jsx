@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 
 const Error = () => {
+    useTitle('Error Page')
     return (
         <div className='min-h-screen flex flex-col justify-center items-center'>
             <p className='text-red-600'>Sorry, an unexpected error has occurred.</p>

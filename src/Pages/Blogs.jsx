@@ -1,4 +1,7 @@
+import useTitle from "../hooks/useTitle";
+
 const Blogs = () => {
+    useTitle('Blogs')
   return (
     <div className="w-full max-w-screen-xl mx-auto p-8 my-12 md:my-16 lg:my-16">
       <div className="w-full h-10 flex justify-between items-center pb-10 mb-10 border-b-2">

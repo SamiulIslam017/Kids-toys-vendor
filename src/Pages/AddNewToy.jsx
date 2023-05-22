@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../hooks/useTitle";
 
 const AddNewToy = () => {
   const { user } = useContext(AuthContext);
   const [value, setValue] = useState('');
   const[subCategory, setSubCategory] = useState('');
   const [rating, setRating] = useState(0);
-  
+  useTitle('Add New Toy')
   const options = [
     {
         'category': "5 to 7 Years",

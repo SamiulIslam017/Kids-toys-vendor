@@ -1,10 +1,12 @@
-import { useLoaderData, useNavigate} from "react-router-dom";
+import { Link, useLoaderData, useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../hooks/useTitle";
 
 const UpdateRoute = () => {
     const navigate = useNavigate();
   const updateToys = useLoaderData();
   const { toyName, price, qty, description, _id } = updateToys;
+  useTitle(`My Toys | ${toyName}`)
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -95,6 +97,8 @@ const UpdateRoute = () => {
           />
         </div>
       </form>
+
+      <p className="text-xl font-bold text-center mt-5">Do not want to update !! <Link to='/myToys'><span className="custom-color underline">Back To My Toys Page</span></Link></p>
     </div>
   );
 };

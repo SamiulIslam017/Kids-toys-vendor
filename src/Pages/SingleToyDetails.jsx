@@ -1,9 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ReactStars from "react-stars";
+import useTitle from "../hooks/useTitle";
 
 const SingleToyDetails = () => {
   const singleToy = useLoaderData();
   const {toyUrl, toyName,email, sellerName, price,rating, qty, description} = singleToy; 
+  useTitle(`Kids Toy Vendor | ${toyName}`);
   return (
     <div className="w-10/12 mx-auto my-20">
       <div className="card lg:card-side">
