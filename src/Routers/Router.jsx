@@ -43,8 +43,9 @@ const router = createBrowserRouter([
       element:<Blogs></Blogs>
     },
     {
-      path:"/toyDetails",
-      element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>
+      path:"/toyDetails/:id",
+      element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
+      loader:({params}) => fetch(`https://kids-toy-vendor-server-samiulislam017.vercel.app/alltoys/${params.id}`)
     },
     {
       path:"/login",
@@ -57,8 +58,8 @@ const router = createBrowserRouter([
     {
       path:'/update/:id',
       element:<UpdateRoute></UpdateRoute>,
-      loader:({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
-    }
+      loader:({params}) => fetch(`https://kids-toy-vendor-server-samiulislam017.vercel.app/alltoys/${params.id}`)
+    },
     
 ],
 },
