@@ -49,6 +49,23 @@ const Blogs = () => {
           queries.
         </p>
       </div>
+      <div className="  mb-20">
+        <h1 className="text-3xl font-bold">
+          What is express js? What is Nest JS?
+        </h1>
+        <p className="mt-6 text-base font-medium">
+          Express is a node js web application framework that provides broad
+          features for building web and mobile applications. It is used to build
+          a single page, multipage, and hybrid web application. Its a layer
+          built on the top of the Node js that helps manage servers and routes.
+        </p>
+        <p className="mt-6 text-base font-medium ">
+          NestJS is a framework for developing modern server-side applications
+          in Node. js. It is built on top of Express, a popular server framework
+          for Node. js, and provides a robust set of features for building
+          efficient, scalable, and enterprise-grade applications.
+        </p>
+      </div>
       
     </div>
   );
