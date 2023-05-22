@@ -67,7 +67,7 @@ const AddNewToy = () => {
         subCategory: subCat,
         description: desc
     }
-    fetch('https://kids-toy-vendor-server.vercel.app//alltoys',{
+    fetch('https://kids-toy-vendor-server.vercel.app/alltoys',{
         method:"POST",
         headers:{
             'content-type': "application/json"
