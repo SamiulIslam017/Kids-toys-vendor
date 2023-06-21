@@ -5,65 +5,65 @@ import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
-    const {login, googleLogin} = useContext(AuthContext);
-    const[error, setError] = useState('');
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+  const { login, googleLogin } = useContext(AuthContext);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
 
-    useTitle('Log In')
+  useTitle('Log In')
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-        const form = e. target;
-        const email = form.email.value;
-        const password = form.password.value;
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    setError('')
+    login(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+
+        const logUser = {
+          email: loggedUser.email
+        }
+        console.log(logUser);
+        setError('');
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Successfully Login',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        form.reset();
+        // navigate(from, {replace: true});
+      })
+      .catch(error => {
+        setError('Password or email did not matched')
+        console.log(error);
+      })
+  }
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(result => {
+        const googleUser = result.user;
+        console.log(googleUser);
         setError('')
-        login(email,password)
-        .then(result => {
-            const loggedUser = result.user;
-            
-            const logUser = {
-              email: loggedUser.email
-            }
-            console.log(logUser);
-            setError('');
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Successfully Login',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            form.reset();
-            // navigate(from, {replace: true});
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Successfully Login With Google',
+          showConfirmButton: false,
+          timer: 1500
         })
-        .catch(error => {
-            setError('Password or email did not matched')
-            console.log(error);
-        })
-    }
-
-    const handleGoogleLogin =() => {
-        googleLogin()
-        .then(result => {
-            const googleUser = result.user;
-            console.log(googleUser);
-            setError('')
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Successfully Login With Google',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            navigate(from, {replace: true});
-        })
-    }
+        navigate(from, { replace: true });
+      })
+  }
   return (
-    <div className="w-6/12 mx-auto my-20">
+    <div className="w-11/12 md:w-6/12 lg:w-6/12 mx-auto my-20">
       <div className="text-center mb-10">
-        <h1 className="text-5xl font-bold">Login now!</h1>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl  font-bold">Login now!</h1>
         <p className="py-6">
           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
           excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
@@ -115,7 +115,7 @@ const Login = () => {
           </div>
         </div>
         <div className="text-center font-base">
-            <p>New In our vendor? <Link to="/register" className="custom-color font-bold">Register Now!!</Link></p>
+          <p>New In our vendor? <Link to="/register" className="custom-color font-bold">Register Now!!</Link></p>
         </div>
       </form>
     </div>

@@ -5,65 +5,65 @@ import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
-    const navigate = useNavigate();
-    const [error, setError] = useState('');
-    const {createUser,googleLogin} = useContext(AuthContext);
-    useTitle('Register')
-    async function handleRegister(e){
-        e.preventDefault();
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        const photo = form.photo.value;
-        setError('')
-        if (password < 6) {
-            setError('Password must be 6 characters');
-            return;
-        }
-        try {
-            await createUser(email,password,name,photo)
-            setError('');
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Account Create Successfully Done',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            navigate('/');
-            form.reset();
-
-        } catch (error) {
-            console.log(error);
-        }
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
+  const { createUser, googleLogin } = useContext(AuthContext);
+  useTitle('Register')
+  async function handleRegister(e) {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    setError('')
+    if (password < 6) {
+      setError('Password must be 6 characters');
+      return;
     }
+    try {
+      await createUser(email, password, name, photo)
+      setError('');
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Account Create Successfully Done',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      navigate('/');
+      form.reset();
 
-
-    const handleGoogleLogin= () => {
-        googleLogin()
-        .then(result => {
-            const googleUser = result.user;
-            console.log(googleUser);
-            setError('');
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Google login Successfully Done',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            navigate('/');
-        })
-        .catch(err => {
-            setError(err)
-            console.log(err);
-        })
+    } catch (error) {
+      console.log(error);
     }
+  }
+
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(result => {
+        const googleUser = result.user;
+        console.log(googleUser);
+        setError('');
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Google login Successfully Done',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        navigate('/');
+      })
+      .catch(err => {
+        setError(err)
+        console.log(err);
+      })
+  }
   return (
-    <div className="w-6/12 mx-auto my-20">
+    <div className="w-11/12 md:w-6/12 lg:w-6/12 mx-auto my-20">
       <div className="text-center mb-10">
-        <h1 className="text-5xl font-bold">Login now!</h1>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Login now!</h1>
         <p className="py-6">
           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
           excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
@@ -71,7 +71,7 @@ const Register = () => {
         </p>
       </div>
       <form onSubmit={handleRegister} className="border border-slate-200 p-8 rounded-md shadow-2xl">
-      <div className="form-control w-full">
+        <div className="form-control w-full">
           <label className="label">
             <span className="label-text">Your Name</span>
           </label>
